@@ -13,8 +13,8 @@ type Node struct {
 	ID         string
 	Username   string
 	Email      string
-	TotalSpace int
-	UsedSpace  int
+	TotalSpace float64
+	UsedSpace  float64
 	LastSeen   time.Time
 }
 

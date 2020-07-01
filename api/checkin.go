@@ -12,8 +12,8 @@ type NodeData struct {
 	ID         string
 	Username   string
 	Email      string
-	TotalSpace int
-	UsedSpace  int
+	TotalSpace float64
+	UsedSpace  float64
 }
 
 // CheckIn sends a JSON post request to the stats location provided.
