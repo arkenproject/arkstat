@@ -17,11 +17,11 @@ type values struct {
 var PageValues values
 
 func init() {
-	PageValues.Title = "Arken Stats"
+	PageValues.Title = "Arken"
 
 }
 
-// Page is the default web handler to render the "stats" html page.
+// Page is the default web handler to render the "arkstat" html page.
 func Page(w http.ResponseWriter, r *http.Request) {
 	var t *template.Template
 	t = template.New("index.html")

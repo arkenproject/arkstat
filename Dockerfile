@@ -27,7 +27,7 @@ RUN apk add --no-cache \
     binutils-gold
 
 # Build the Go app
-RUN go build -o stats .
+RUN go build -o arkstat .
 
 # Start again with minimal envoirnment.
 FROM alpine
@@ -35,8 +35,8 @@ FROM alpine
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-COPY --from=builder /app/stats /app/stats
+COPY --from=builder /app/arkstat /app/arkstat
 COPY --from=builder /app/templates /app/templates
 
 # Command to run the executable
-CMD ["./stats"]
+CMD ["./arkstat"]

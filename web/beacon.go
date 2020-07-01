@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/arkenproject/stats/database"
+	"github.com/arkenproject/arkstat/database"
 )
 
-// Beacon is the api front end for nodes to check in with the stats server.
+// Beacon is the api front end for nodes to check in with the arkstat server.
 func Beacon(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		var node database.Node

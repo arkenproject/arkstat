@@ -1,4 +1,4 @@
-module github.com/arkenproject/stats
+module github.com/arkenproject/arkstat
 
 go 1.14
 

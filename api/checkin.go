@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-// NodeData is a struct of data that should be send to the stats server.
+// NodeData is a struct of data that should be send to the arkstat server.
 type NodeData struct {
 	ID         string
 	Username   string
@@ -37,7 +37,7 @@ func CheckIn(location string, input NodeData) (err error) {
 	}
 
 	if result != input {
-		return errors.New("different stats back from server")
+		return errors.New("different arkstat back from server")
 	}
 
 	return

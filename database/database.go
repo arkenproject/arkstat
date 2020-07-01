@@ -18,7 +18,7 @@ type Node struct {
 	LastSeen   time.Time
 }
 
-// DatabaseLocation is the path of the Stats Database
+// DatabaseLocation is the path of the ArkStat Database
 var DatabaseLocation string
 
 // Determine location of database.
@@ -27,7 +27,7 @@ func init() {
 	if evExists {
 		DatabaseLocation = evVal
 	} else {
-		DatabaseLocation = "./stats.db"
+		DatabaseLocation = "./arkstat.db"
 	}
 
 }

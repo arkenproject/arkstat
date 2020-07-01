@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/arkenproject/stats/tasks"
+	"github.com/arkenproject/arkstat/tasks"
 
-	"github.com/arkenproject/stats/web"
+	"github.com/arkenproject/arkstat/web"
 )
 
 func main() {
@@ -19,6 +19,6 @@ func main() {
 	http.HandleFunc("/beacon", web.Beacon)
 	http.HandleFunc("/", web.Page)
 
-	fmt.Println("Started Stats Webserver!")
+	fmt.Println("Started ArkStat Webserver!")
 	http.ListenAndServe(":8080", nil)
 }

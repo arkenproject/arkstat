@@ -5,9 +5,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/arkenproject/stats/web"
+	"github.com/arkenproject/arkstat/web"
 
-	"github.com/arkenproject/stats/database"
+	"github.com/arkenproject/arkstat/database"
 )
 
 // Start begins running a series of short tasks to update the website information every 2 minutes.
