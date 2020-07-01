@@ -1,4 +1,4 @@
-name: arken build
+name: arkstat build
 
 on:
   push:
