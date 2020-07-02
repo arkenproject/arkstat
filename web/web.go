@@ -8,8 +8,8 @@ import (
 // Values is a structure of variables to be replaced in the template.
 type values struct {
 	Title       string
-	UsedSpace   float64
-	TotalSpace  float64
+	UsedSpace   string
+	TotalSpace  string
 	ActiveNodes int
 }
 

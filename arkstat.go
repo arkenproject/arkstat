@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/arkenproject/arkstat/tasks"
-
 	"github.com/arkenproject/arkstat/web"
 )
 
