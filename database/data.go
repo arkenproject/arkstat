@@ -6,7 +6,7 @@ import (
 )
 
 // GetPoolSize return the sum the nodes total space and used space.
-func GetPoolSize(db *sql.DB) (total int, used int, err error) {
+func GetPoolSize(db *sql.DB) (total float64, used float64, err error) {
 	err = db.Ping()
 	if err != nil {
 		return total, used, err

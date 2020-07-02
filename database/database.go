@@ -47,8 +47,8 @@ func Open(path string) (db *sql.DB, err error) {
 			id TEXT,
 			username TEXT,
 			email TEXT,
-			total_space INT,
-			used_space TEXT,
+			total_space REAL,
+			used_space REAL,
 			last_seen DATETIME,
 			
 			PRIMARY KEY(id)

@@ -21,7 +21,7 @@ func Start() {
 		// Calculates the total size of the pool from reporting nodes.
 		total, used, err := database.GetPoolSize(db)
 		if err != nil &&
-			!strings.HasSuffix(err.Error(), "converting NULL to int is unsupported") {
+			!strings.HasSuffix(err.Error(), "converting NULL to float64 is unsupported") {
 			log.Fatal(err)
 		}
 		nodes, err := database.GetNodesReporting(db)
@@ -29,8 +29,8 @@ func Start() {
 			log.Fatal(err)
 		}
 		// Set webpage values from Database.
-		web.PageValues.TotalSpace = float32(total) / 1000
-		web.PageValues.UsedSpace = float32(used) / 1000
+		web.PageValues.TotalSpace = float64(total) / float64(1000)
+		web.PageValues.UsedSpace = float64(used) / float64(1000)
 		web.PageValues.ActiveNodes = nodes
 
 		// Poll Database every two minutes.
