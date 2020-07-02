@@ -30,7 +30,7 @@ func Start() {
 			log.Fatal(err)
 		}
 		// Set webpage values from Database.
-		web.PageValues.TotalSpace = fmt.Sprintf("%f", float64(total)/float64(1000))
+		web.PageValues.TotalSpace = fmt.Sprintf("%.2f", float64(total)/float64(1000))
 		web.PageValues.UsedSpace = fmt.Sprintf("%f", float64(used)/float64(1000))
 		web.PageValues.ActiveNodes = nodes
 
