@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang='en'>
+
 <head>
 
   <title>Arken</title>
@@ -8,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-	<meta name="description" content="p2p chat" />
+  <meta name="description" content="p2p chat" />
 
   <link rel="stylesheet" type="text/css" href="css/fonts/nitti.css" />
   <link rel="stylesheet" type="text/css" href="css/fonts/ibmplexmono.css" />
@@ -20,73 +21,106 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 
   <style type="text/css">
-    .no-fouc {display: none;}
-</style>
-<script defer src="graphic/public/build/bundle.js"></script>
-<script type="text/javascript">
+    .no-fouc {
+      display: none;
+    }
+  </style>
+  <script src="graphic/public/build/bundle.js"></script>
+  <script type="text/javascript">
     document.documentElement.className = 'no-fouc';
-</script>
+  </script>
 
 </head>
 
 <body class="landing">
   <script>
     // set the values here and use them in the 
-    var values =[ {{.UsedSpace}} , {{.TotalSpace}} ]
-    console.log(values)
+    window.onload = () => {
+      let used = {{.UsedSpace }}
+    let total = {{.TotalSpace }}
+    console.log(new window.LoadVis({
+      target: document.querySelector("#graphicHolder"),
+      props: {
+        used
+        ,
+        total
+      }
+    }))
+    }
   </script>
-  <header><div class="header-wrapper"><div class="inner-wrapper">
-  </div></div></header>
+  <header>
+    <div class="header-wrapper">
+      <div class="inner-wrapper">
+      </div>
+    </div>
+  </header>
 
   <div class="content">
     <div class="wrapper">
 
-  <section class="light"><div class="section-wrapper"><div class="columns">
-    <div>
-      <h1>{{.Title}}</h1>
-      <h3>Meet Arken, A Tool to Securely Backup the World's Important Scientific Data.</h3>
-    </div> 
-    <div>
-      <div id="graphicHolder"></div>
-      <ul id='guide'>
-        <li><b>Used Space:</b> {{.UsedSpace}} TB</li>
-        <li><b>Total Space:</b> {{.TotalSpace}} TB</li>
-        <li><b>Active Nodes:</b> {{.ActiveNodes}}</li>
-        <hr/>
-        <li><b>Gitub:</b> <a href="https://github.com/arkenproject/arken">arkenproject/arken</a></li>
-        <hr/>
-        <li><b>Dockerhub:</b> <a href='https://hub.docker.com/r/arkenproject/arken'>docker-arken</a></li>
-      </ul>
-  </div></div></section>
+      <section class="light">
+        <div class="section-wrapper">
+          <div class="columns">
+            <div>
+              <h1>{{.Title}}</h1>
+              <h3>Meet Arken, A Tool to Securely Backup the World's Important Scientific Data.</h3>
+            </div>
+            <div>
+              <div id="graphicHolder"></div>
+              <ul id='guide'>
+                <li><b>Used Space:</b> {{.UsedSpace}} TB</li>
+                <li><b>Total Space:</b> {{.TotalSpace}} TB</li>
+                <li><b>Active Nodes:</b> {{.ActiveNodes}}</li>
+                <hr />
+                <li><b>Gitub:</b> <a href="https://github.com/arkenproject/arken">arkenproject/arken</a></li>
+                <hr />
+                <li><b>Dockerhub:</b> <a href='https://hub.docker.com/r/arkenproject/arken'>docker-arken</a></li>
+              </ul>
+            </div>
+          </div>
+      </section>
 
-  <section id="public">
-    <br>
-  </section>
+      <section id="public">
+        <br>
+      </section>
 
-  <section id="about" class="default"><div class="section-wrapper"><div class="columns">
-    <div>
-      <h2>A bit of Backstory</h2>
-      <p>Many Researchers, Museums, and Archivists are struggling to host and protect a vast amount of important public data. On the other hand, there are many of us developers, tinkerers, and general computer enthusists who have extra storage space on our home servers.
-        The idea for Arken is to build an autonomous system for organizing, balancing, and distributing this data to users who can donate their extra space.</p>
-      <h2>What is Arken?</h2>
-        <p>Arken is management engine that runs on top of the IPFS (Interplanetary File System) protocol. Each instance of Arken calculates which important files are hosted by the fewest number of other nodes on the network and should be locally backed up to reduce the risk of data loss. Arken also knows how much space it's using on your system and will respect limits you set by looking to locally delete data that is backed up by more than 10% of the cluster.</p>
-    </div>
+      <section id="about" class="default">
+        <div class="section-wrapper">
+          <div class="columns">
+            <div>
+              <h2>A bit of Backstory</h2>
+              <p>Many Researchers, Museums, and Archivists are struggling to host and protect a vast amount of important
+                public data. On the other hand, there are many of us developers, tinkerers, and general computer
+                enthusists who have extra storage space on our home servers.
+                The idea for Arken is to build an autonomous system for organizing, balancing, and distributing this
+                data to users who can donate their extra space.</p>
+              <h2>What is Arken?</h2>
+              <p>Arken is management engine that runs on top of the IPFS (Interplanetary File System) protocol. Each
+                instance of Arken calculates which important files are hosted by the fewest number of other nodes on the
+                network and should be locally backed up to reduce the risk of data loss. Arken also knows how much space
+                it's using on your system and will respect limits you set by looking to locally delete data that is
+                backed up by more than 10% of the cluster.</p>
+            </div>
 
-    <div style="margin-right:-250px; width:800px">
-      <a href="https://asciinema.org/a/344705" target="_blank"><img src="https://asciinema.org/a/344705.svg" /></a>
-      <br><br>
-      <h2>Want to read more about Arken?</h2>
-      <p>Check out the <a href="https://github.com/arkenproject/arken">Project's Github Page</a>.</p>
-    </div>
-  </div></div></section>
+            <div style="margin-right:-250px; width:800px">
+              <a href="https://asciinema.org/a/344705" target="_blank"><img
+                  src="https://asciinema.org/a/344705.svg" /></a>
+              <br><br>
+              <h2>Want to read more about Arken?</h2>
+              <p>Check out the <a href="https://github.com/arkenproject/arken">Project's Github Page</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<script>
-  window.addEventListener("load", function(e) {
-    document.documentElement.className = '';
-  });
-</script>
+      <script>
+        window.addEventListener("load", function (e) {
+          document.documentElement.className = '';
+        });
+      </script>
 
-<!-- website forked from https://handshake.org (MIT) -->
+      <!-- website forked from https://handshake.org (MIT) -->
 
 </body>
+
 </html>
