@@ -14,6 +14,7 @@ func main() {
 
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("templates/css"))))
 	http.Handle("/fonts/", http.StripPrefix("/fonts/", http.FileServer(http.Dir("templates/fonts"))))
+	http.Handle("/graphic/", http.StripPrefix("/graphic/", http.FileServer(http.Dir("templates/graphic"))))
 
 	http.HandleFunc("/beacon", web.Beacon)
 	http.HandleFunc("/", web.Page)
