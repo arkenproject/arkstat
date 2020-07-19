@@ -6,8 +6,8 @@
   let svgElement;
   onMount(() => {
     let dims = {
-      width: 250,
-      height: 250,
+      width: 300,
+      height: 300,
       margins: 20
     };
     let svg = d3.select(svgElement);
@@ -44,16 +44,16 @@
       .data(pie)
       .enter()
       .append("text")
-      .attr("transform", d => `translate(${arcgen.centroid(d)})`)
+      .attr("transform", d => {
+        let pos = arcgen.centroid(d)
+        // scale it outside of middle of position
+        pos[0] = pos[0]*.5
+        pos[1] = pos[1]*.5
+        return `translate(${pos})`
+      })
       .style("text-anchor", "middle")
       .text(d => `${d.data}TB`)
-      .attr("fill", (d, i) => {
-        if (i == 1) {
-          // purplish
-          return "black";
-        }
-        return "white";
-	  })
+      .attr("fill","black")
 	  .attr("class","storageText")
   });
 </script>
