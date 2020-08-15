@@ -2,6 +2,7 @@ package tasks
 
 import (
 	"context"
+	"log"
 	"time"
 
 	"github.com/arkenproject/arkstat/database"
@@ -49,7 +50,8 @@ func removeMissing() (err error) {
 
 			_, _, err := mg.Send(ctx, message)
 			if err != nil {
-				return err
+				log.Println(err)
+				continue
 			}
 		}
 	}
