@@ -1,38 +1,66 @@
 package tasks
 
 import (
-	"fmt"
 	"log"
-	"strings"
+	"os"
 	"time"
-
-	"github.com/arkenproject/arkstat/web"
-
-	"github.com/arkenproject/arkstat/database"
 )
+
+// MailGun Config Struct
+type mailconf struct {
+	Domain     string
+	PrivateKey string
+	Sender     string
+	Setup      bool
+}
+
+var (
+	config mailconf
+)
+
+// Initialize MailGun Config From ENV variables.
+func init() {
+	// Set initial config found value
+	config.Setup = true
+	// Check for MailGun Domain
+	evVal, evExists := os.LookupEnv("STATS_MAIL_DOMAIN")
+	if evExists {
+		config.Domain = evVal
+	} else {
+		config.Setup = false
+		log.Println("WARNING: MailGun Domain Not Found")
+	}
+	// Check for MailGun Private Key
+	evVal, evExists = os.LookupEnv("STATS_MAIL_PRIVATEKEY")
+	if evExists {
+		config.PrivateKey = evVal
+	} else {
+		config.Setup = false
+		log.Println("WARNING: MailGun Private Key Not Found")
+	}
+	// Check for MailGun Private Key
+	evVal, evExists = os.LookupEnv("STATS_MAIL_SENDER")
+	if evExists {
+		config.Sender = evVal
+	} else {
+		config.Setup = false
+		log.Println("WARNING: Sender Email Not Found")
+	}
+}
 
 // Start begins running a series of short tasks to update the website information every 2 minutes.
 func Start() {
 	for {
-		db, err := database.Open(database.DatabaseLocation)
+		err := removeMissing()
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 
-		// Calculates the total size of the pool from reporting nodes.
-		total, used, err := database.GetPoolSize(db)
-		if err != nil &&
-			!strings.HasSuffix(err.Error(), "converting NULL to float64 is unsupported") {
-			log.Fatal(err)
-		}
-		nodes, err := database.GetNodesReporting(db)
+		// Update the values of the site without querying the database every page load.
+		err = updateSite()
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
-		// Set webpage values from Database.
-		web.PageValues.TotalSpace = fmt.Sprintf("%.2f", float64(total)/float64(1000))
-		web.PageValues.UsedSpace = fmt.Sprintf("%f", float64(used)/float64(1000))
-		web.PageValues.ActiveNodes = nodes
 
 		// Poll Database every two minutes.
 		time.Sleep(2 * time.Minute)
