@@ -8,75 +8,77 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   inkscape:export-ydpi="300"
-   inkscape:export-xdpi="300"
-   inkscape:export-filename="just_rock_noback_black.png"
-   sodipodi:docname="favicon.svg"
-   viewBox="0 0 400 400"
-   height="400"
-   width="400"
-   id="svg2"
-   version="1.1">
-  <metadata
-     id="metadata8">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs6" />
-  <sodipodi:namedview
-     inkscape:current-layer="g10"
-     inkscape:window-maximized="1"
-     inkscape:window-y="34"
-     inkscape:window-x="0"
-     inkscape:cy="211.12981"
-     inkscape:cx="376.31958"
-     inkscape:zoom="1.35"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     id="namedview4"
-     inkscape:window-height="1007"
-     inkscape:window-width="1920"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
-     bordercolor="#666666"
-     pagecolor="#ffffff" />
-  <g
-     id="g10"
-     inkscape:label="Image"
-     inkscape:groupmode="layer">
-    <ellipse
-       inkscape:export-ydpi="300"
-       inkscape:export-xdpi="300"
-       inkscape:export-filename="favicon.png"
-       ry="200.72968"
-       rx="200.21509"
-       cy="200.14035"
-       cx="200.54765"
-       id="path30"
-       style="fill:#ffffff;stroke-width:1.49834" />
-    <rect
-       y="226.66261"
-       x="142.54001"
-       height="289.47864"
-       width="278.69067"
-       id="rect26"
-       style="fill:none;stroke-width:1.01177" />
-    <path
-       sodipodi:nodetypes="sscssssscsscsssscsssssssssscscscssssssssscsss"
-       id="path16-3"
-       d="m 195.21775,384.65671 c -1.1556,-1.0107 -19.95973,-36.80503 -41.78696,-79.54296 l -39.68587,-77.70531 -8.19387,-33.98761 c -4.50663,-18.69321 -7.872396,-34.52304 -7.47945,-35.17742 5.70755,-9.5053 95.53766,-144.483573 96.99207,-145.739879 1.10815,-0.957177 2.91549,-1.504796 4.01632,-1.216929 1.22899,0.3214 22.46566,31.232194 55.02329,80.088513 l 53.02181,79.565075 -0.50326,6.70766 c -0.27677,3.6892 -1.30496,17.10336 -2.28486,29.80922 l -1.78159,23.10158 -50.26396,76.65525 c -27.6452,42.16039 -50.99356,77.24591 -51.88526,77.96783 -2.1242,1.71975 -2.6869,1.66282 -5.18841,-0.52502 z m 52.16211,-87.17305 46.25409,-70.63439 1.72363,-22.61537 c 0.94801,-12.43844 1.48606,-22.85295 1.1957,-23.1433 -0.29038,-0.29039 -13.69302,6.2792 -29.78366,14.59904 -16.09063,8.31984 -45.65195,23.49184 -65.69182,33.71556 -22.37896,11.41704 -36.25969,19.07396 -35.97875,19.84671 0.25159,0.69195 7.80681,27.24738 16.78942,59.01207 8.9826,31.76467 16.59625,58.62844 16.9192,59.69727 0.323,1.06884 0.9767,1.54138 1.45267,1.05005 0.47598,-0.49127 21.67977,-32.6787 47.11952,-71.52764 z m -80.27198,-7.3196 -11.978,-42.22557 -20.49971,-30.73864 c -11.27483,-16.90623 -20.49814,-30.03104 -20.4962,-29.16628 10e-4,0.86478 1.84994,9.20816 4.10672,18.54092 l 4.10327,16.96866 25.164,49.18587 c 13.84021,27.05224 26.4362,51.71368 27.99106,54.80317 1.55489,3.0895 2.99801,5.44634 3.20696,5.23738 0.20895,-0.20897 -5.0102,-19.38144 -11.5981,-42.60551 z m 45.1873,-76.94434 c 28.06245,-14.4455 58.09323,-29.80574 66.73513,-34.13389 8.64189,-4.32814 15.71252,-8.34152 15.71252,-8.91859 0,-1.26141 -96.60267,-146.311291 -97.09418,-145.7879 -0.18864,0.200873 -20.43016,30.76226 -44.98115,67.914215 l -44.63818,67.548985 26.285,39.82085 c 14.45677,21.90147 26.43647,39.82087 26.62161,39.82087 0.18521,0 23.29682,-11.81905 51.35925,-26.26454 z"
-       style="fill:#000000;fill-opacity:1;stroke-width:1.05007" />
-  </g>
-</svg>
+   height="360"
+   width="360"
+   sodipodi:docname="favicon-new.svg"
+   xml:space="preserve"
+   viewBox="0 0 360.00001 360"
+   y="0px"
+   x="0px"
+   id="Layer_1"
+   version="1.1"
+   inkscape:export-filename="/home/alecbcs/Dropbox/Projects/Arken/assets/arken-stone-shadow.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"><metadata
+   id="metadata20"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+   id="defs18" /><sodipodi:namedview
+   inkscape:current-layer="Layer_1"
+   inkscape:window-maximized="0"
+   inkscape:window-y="141"
+   inkscape:window-x="2787"
+   inkscape:cy="180"
+   inkscape:cx="141.07461"
+   inkscape:zoom="1.5488259"
+   showgrid="false"
+   id="namedview16"
+   inkscape:window-height="953"
+   inkscape:window-width="2181"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   inkscape:document-rotation="0" />
+<style
+   id="style2"
+   type="text/css">
+	.st0{fill:#D1D3D4;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:6;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:#010101;}
+</style>
+<ellipse
+   ry="178.8513"
+   rx="178.09679"
+   cy="179.41289"
+   cx="179.58089"
+   id="path835"
+   style="fill:#ffffff;stroke-width:1.1113" /><polygon
+   transform="matrix(1.1488291,0,0,1.1488291,48.865655,-26.815253)"
+   id="polygon4"
+   points="88.4,214 108.8,316.8 43.8,201.8 33.2,148.4 "
+   class="st0" />
+
+<polyline
+   transform="matrix(1.1488291,0,0,1.1488291,48.865655,-26.815253)"
+   id="polyline8"
+   points="33.2,147.1 88.4,211 110.2,319.6 "
+   class="st2" />
+<line
+   id="line10"
+   y2="152.51698"
+   x2="266.45389"
+   y1="215.58768"
+   x1="150.42216"
+   class="st2" />
+
+<path
+   id="path6-3"
+   d="m 175.05065,19.91306 c 16.96499,30.583153 91.40323,132.60392 91.40323,132.60392 l -3.00061,53.54937 c 0,0 -55.28051,82.286 -88.40262,135.25833 C 149.66086,289.85266 98.419655,205.3739 98.419655,205.3739 L 86.070986,142.24566 C 86.186395,142.13025 157.3932,52.688967 175.05065,19.91306 Z"
+   class="st1"
+   style="fill:none;stroke:#000000;stroke-width:6.92448;stroke-linejoin:round;stroke-miterlimit:10" /></svg>
