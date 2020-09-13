@@ -259,7 +259,7 @@ table {
   margin: 0;
   margin-top: 5px; }
 .nav-bar .user-menu .dropdown .dropdown-menu .dropdown-header a.button, .nav-bar .nav-links > ul .user-menu .dropdown .dropdown-menu .dropdown-header a.button {
-  background: #693AFA;
+  background: #000;
   color: white;
   margin-left: 10px;
   margin-right: 0;
@@ -288,7 +288,7 @@ table {
 .landing .dropdown .dropdown-menu .dropdown-header, .light .dropdown .dropdown-menu .dropdown-header {
   background-color: #F2F2F2; }
 .landing .dropdown .dropdown-menu .dropdown-header .button, .light .dropdown .dropdown-menu .dropdown-header .button {
-  background: #693AFA;
+  background: #000;
   color: white;
   margin-left: 10px;
   float: right;
@@ -650,16 +650,16 @@ h5 {
   margin-top: 2em !important; }
 
 .purple-link {
-  color: #693AFA !important;
+  color: #000 !important;
   text-decoration: underline !important; }
 .purple-link:hover {
-  color: #5630CD !important; }
+  color: #000 !important; }
 
 .long-list-item {
   word-wrap: break-word; }
 
 a {
-  color: #693AFA;
+  color: #000;
   font-weight: 400; }
 
 .community ul li {
@@ -921,7 +921,7 @@ body.landing .button:hover {
 .hero-no-split p {
   margin-bottom: 0; }
 .hero-no-split p a {
-  color: #693AFA; }
+  color: #000; }
 .hero-no-split h4 {
   padding-bottom: 0px;
   margin-bottom: 0px;
@@ -948,10 +948,10 @@ body.landing .button:hover {
   height: 300px; }
 
 .light .button, .default .button {
-  background-color: #693AFA; }
+  background-color: #000; }
 
 .light .button:hover, .default .button:hover {
-  background-color: #5630CD; }
+  background-color: #000; }
 
 .light .button {
   color: white; }
@@ -962,10 +962,10 @@ body.landing .button:hover {
 .light .nav-links .button, .landing .nav-links .button, .default .nav-links .button {
   padding: 12px 20px;
   border-radius: 5px;
-  background-color: #693AFA;
+  background-color: #000;
   color: white; }
 .light .nav-links .button:hover, .landing .nav-links .button:hover, .default .nav-links .button:hover {
-  background-color: #5630CD; }
+  background-color: #000; }
 
 section.light {
   background-color: white; }
@@ -1004,7 +1004,7 @@ section.default {
 #faq .links a:hover {
   text-decoration: underline; }
 #faq .links a.active {
-  color: #693AFA; }
+  color: #000; }
 
 #questions {
   margin-left: 100px; }

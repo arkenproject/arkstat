@@ -53,17 +53,27 @@
   <header><div class="header-wrapper"><div class="inner-wrapper">
     <nav id="navBar" class="no-js nav-bar">
 
-  <a class="nav-logo" href="/">
-    <img class='logo' src='/images/logo.svg' width="200px" height="100px"></a>
-    <div class="nav-right ">
-      <div class="nav-links "">
-          <ul>
-              <!-- <li><a href="https://arken.io/upload">Upload Data</a></li>
-              <li><a href="/contibute">Contibute Space</a></li> -->
-          </ul>
-        </div>
+      <a class="nav-logo" href="/">
+        <img class='logo' src='/images/logo.svg' width="200px" height="100px"></a>
+        <div class="nav-right ">
+          <div class="nav-links "">
+              <ul>
+                  <li><a href="/docs/data.html">Upload Data</a></li>
+                  <li><a href="/docs/contibute.html">Contibute Space</a></li>
+              </ul>
+            </div>
+          </div>
+
+      <div id='nav-toggle' class="burgermenu" href="#">☰</div>
+
+      <div id='overlay'></div>
+      <div id="burgernav">
+        <ul>
+          <li><a href="/docs/data.html">Upload Data</a></li>
+          <li><a href="/docs/contibute.html">Contibute Space</a></li>
+        </ul>
       </div>
-</nav>
+  </nav>
   <script>
     // set the values here and use them in the 
     window.onload = () => {
@@ -79,12 +89,8 @@
     }))
     }
   </script>
-  <header>
-    <div class="header-wrapper">
-      <div class="inner-wrapper">
-      </div>
-    </div>
-  </header>
+
+  </div></div></header>
 
   <div class="content">
     <div class="wrapper">
@@ -109,6 +115,7 @@
               </ul>
             </div>
           </div>
+        </div>
       </section>
 
       <section id="about" class="default">
@@ -120,8 +127,7 @@
                 On the other hand, there are many of us developers, tinkerers, and general computer enthusiasts who have extra storage 
                 space on our home servers.
                 <br>
-                The goal of Arken is to build an autonomous system for organizing, balancing, and distributing this data among users who 
-                can donate their extra space.</p>
+                Our goal with Arken is to build a long term storage solution to perserve open source & scientific knowledge.</p>
               <h2>What is Arken?</h2>
               <p>Arken is a management engine that runs on top of the IPFS (Interplanetary File System) protocol. Each instance of Arken 
                 calculates which important files are hosted by the fewest number of other nodes on the network and should thus be 
@@ -130,13 +136,9 @@
             </div>
 
             <div>
-              <h2>Arken Demo</h2>
-              <a href="https://asciinema.org/a/344705" target="_blank"><img src="https://asciinema.org/a/344705.svg" /></a>
+              <h2>Demo of Arken Running</h2>
+              <a href="https://asciinema.org/a/344705" target="_blank"><img src="/images/demo.svg" /></a>
               <br>
-              <br>
-              <h2>Keyset Security</h2>
-              <p>Since Keysets are openly available through Git repositories, they can be easily audited but can only be changed by 
-                users who have access to those Git repositories or through pull requests.</p>
               <br>
               <h2>Want to read more about Arken?</h2>
               <p>Check out the <a href="https://github.com/arkenproject/arken">Project's Github Page</a>.</p>
@@ -144,15 +146,17 @@
           </div>
         </div>
       </section>
+    </div> 
+  </div>
 
-      <script>
-        window.addEventListener("load", function (e) {
-          document.documentElement.className = '';
-        });
-      </script>
+  <script src='/js/nav.js'></script>
+  <script>
+    window.addEventListener("load", function (e) {
+      document.documentElement.className = '';
+    });
+  </script>
+
 
       <!-- website forked from https://handshake.org (MIT) -->
-
 </body>
-
 </html>
