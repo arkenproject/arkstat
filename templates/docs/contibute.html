@@ -36,11 +36,17 @@
   <!--<link rel="stylesheet" type="text/css" href="/css/footer.css"/>-->
 
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/highlight/styles/atom-one-light.css">
+  <script src="/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
   <style type="text/css">
     .no-fouc {
       display: none;
     }
+    pre, code {
+    white-space: pre-wrap;
+}
   </style>
   <script src="/graphic/public/build/bundle.js"></script>
   <script type="text/javascript">
@@ -87,6 +93,8 @@
           <section id="faq" class="light"><div class="section-wrapper faq">
             <div id='navigation' class="links">
               <a id='Introduction' class='active' href="#intro">Introduction</a>
+              <a id='Installing Docker' class='active' href="#docker">Installing Docker</a>
+              <a id='Installing Arken' class='active' href="#arken">Installing Arken</a>
             </div>
             <div id="questions">
               <h2 id="intro">Introduction</h2>
@@ -96,7 +104,119 @@
                 <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
                 <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
                 <span><p>
-                    Comming Soon!                      
+                  If you've ever used Docker before, running Arken is as simple as pulling and configuring
+                  a new docker container. If you haven't used docker before, no worries, we'll walk you
+                  through it!
+                  <br>
+                  <br>
+                  First you'll need an old computer or home server that's got at least 5 Gigabytes of space
+                  free and can run Linux. (Although Linux is not required to run Arken, it's what we're going
+                  to be covering in this article. For more information on running Docker containers on Windows
+                  check out the link <a href="https://docs.docker.com/docker-for-windows/">here</a>.)
+                </p></span>
+              </div>
+              <h2 id="docker">Installing Docker</h2>
+              <div class="question">
+                <h3>Installing Docker on Your Machine:
+                <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+                <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+                <span><p>
+                  Once you've got your machine up and running, you're going to need to install
+                  docker to install & manage the Arken Docker Container. Depending on the distribution
+                  of Linux your running on your local machine the instructions for installing docker
+                  might vary slightly. In this article we're going to focus on installing Docker
+                  on a machine running Debian. So if you're running a different form of Linux we
+                  recommend you look at the specific instructions for your distribution 
+                  <a href="https://docs.docker.com/engine/install/">here</a>.
+                  <br>
+                  <br>
+                  <h4>Step 1: Configuring the Docker Repo</h4>
+                  <pre class="highlight">
+                    <code>
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+$ sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/debian \
+    $(lsb_release -cs) \
+    stable"
+
+                    </code>
+                  </pre>
+                  <h4>Step 2: Install the Docker Container Engine</h4>
+                  <pre class="highlight">
+                    <code>
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+                    </code>
+                  </pre>
+                  <h4>Step 3: Enable Docker to Start at Boot</h4>
+                  <pre class="highlight">
+                    <code>
+$ sudo systemctl enable --now docker
+                    </code>
+                  </pre>
+                </p></span>
+              </div>      
+              <div class="question">
+                <h3>Installing Docker-Compoose
+                <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+                <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+                <span><p>
+                  Docker-Compose is a tool in the family of docker applications that allows us to easily define
+                  a group of docker containers and how we want to configure them. You can learn more about docker-compose
+                  <a href="https://docs.docker.com/compose/">here</a>.
+                  <h4>Step 4: Install Docker-Compoose</h4>
+                  <pre class="highlight">
+                    <code>
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)"\-o /usr/local/bin/docker-compose
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+$ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+                    </code>
+                  </pre>
+                </p></span>
+              </div>
+              <h2 id="arken">Installing Arken</h2>
+              <div class="question">
+                <h3>Installing the Arken Container
+                <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+                <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+                <span><p>
+                  Now that you've got Docker and Docker-Compose up and running on your computer it's time
+                  for the fun part. Let's first define our docker-compose configuration file. Put this file
+                  anywhere you want and have easy access to.
+                  <br>
+                  <br>
+                  Run the following to download a template Arken Config File,
+                  <pre><code>$ wget https://raw.githubusercontent.com/arkenproject/arken/master/docs/examples/docker-compose.yml</code></pre>
+                  <br>
+                  <br>
+                  Now you can open that file by typing,
+                  <br>
+                  <br>
+                  <pre><code>$ nano docker-compose.yml</code></pre>
+                  <br>
+                  <br>
+                  Read through this file and change all of the fields with the < and > markers.
+                
+                  Once you are finished updating the file you can save your changes by pressing CTRL + X.
+                  Now we can launch the docker containers by running,
+                  <pre><code>$ sudo docker-compose up -d</code></pre>
+                  <br>
+                  <br>
+                  And that's it! Arken is now running on your local machine!
+                  If you'd like to see the status of the application you can type,
+                  <pre><code>$ sudo docker-compose logs -f arken</code></pre>
                 </p></span>
               </div>
               </div>

@@ -26,7 +26,7 @@ func updateSite() (err error) {
 	}
 	// Set webpage values from Database.
 	web.PageValues.TotalSpace = fmt.Sprintf("%.2f", float64(total)/float64(1000))
-	web.PageValues.UsedSpace = fmt.Sprintf("%f", float64(used)/float64(1000))
+	web.PageValues.UsedSpace = fmt.Sprintf("%.4f", float64(used)/float64(1000))
 	web.PageValues.ActiveNodes = nodes
 	return nil
 }
