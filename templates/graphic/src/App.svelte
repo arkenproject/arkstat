@@ -10,6 +10,9 @@
       height: 300,
       margins: 20
     };
+    // chop off useless sig figs
+    used = parseFloat(used.toFixed(1))
+    total = parseFloat(total.toFixed(1))
     let svg = d3.select(svgElement);
     svg.attr("height", dims.height);
     svg.attr("width", dims.width);
