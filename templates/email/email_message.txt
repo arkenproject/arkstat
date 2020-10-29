@@ -1,0 +1,19 @@
+Hi!
+
+It's nice to meet you, I'm Arkstat! 👋 (A Monitoring System for the Arken Cluster.) Your Arken Node hasn't checked in within the last 24 hours. If this downtime was planned or you've shutdown your node, please disregard this message. If this downtime was not planned, your node may be offline for a couple of reasons.
+- Maybe there was a recent power outage and your node didn't reboot sucessfully? (Try rebooting your node.)
+- Maybe your internet connection is offline?
+- Or it's possible either your computer or hard drive within the computer has failed.
+
+If you're able to log in to your node you may be able to see what's going wrong. If you followed the docker-compose method of installation you can see the output logs of Arken by typing,
+
+docker-compose logs -f --tail=50 arken
+
+If Arken is encountering an error please open a Github issue to tell us about it at
+https://github.com/arkenproject/arken/issues
+
+
+Thank you for contributing to the Arken Cluster and helping to preserve valuable scientific knowledge! ❤️
+
+Best,
+Arkstat & the Arken Team

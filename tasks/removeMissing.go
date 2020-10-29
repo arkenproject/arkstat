@@ -2,7 +2,9 @@ package tasks
 
 import (
 	"context"
+	"io/ioutil"
 	"log"
+	"strings"
 	"time"
 
 	"github.com/arkenproject/arkstat/database"
@@ -39,16 +41,22 @@ func removeMissing() (err error) {
 		}
 
 		if node.Email != "" && config.Setup {
+			content, err := ioutil.ReadFile("templates/email/email_message.txt")
+			if err != nil {
+				log.Fatal(err)
+			}
+			emailMessage := string(content)
+
 			message := mg.NewMessage(
 				config.Sender,
 				"Arken Node Offline",
-				"Hey! Just letting you know your Arken node missed it's daily check in.",
-				node.Email)
+				emailMessage,
+				cleanEmail(node.Email))
 
 			ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 			defer cancel()
 
-			_, _, err := mg.Send(ctx, message)
+			_, _, err = mg.Send(ctx, message)
 			if err != nil {
 				log.Println(err)
 				continue
@@ -62,4 +70,8 @@ func removeMissing() (err error) {
 	}
 
 	return nil
+}
+
+func cleanEmail(email string) string {
+	return strings.TrimSuffix(strings.TrimPrefix(email, `"`), `"`)
 }
