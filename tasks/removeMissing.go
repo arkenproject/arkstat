@@ -4,9 +4,9 @@ import (
 	"context"
 	"io/ioutil"
 	"log"
-	"strings"
 	"time"
 
+	"github.com/arkenproject/arkstat/config"
 	"github.com/arkenproject/arkstat/database"
 	"github.com/mailgun/mailgun-go/v4"
 )
@@ -16,8 +16,8 @@ import (
 func removeMissing() (err error) {
 	output := make(chan database.Node)
 	var mg *mailgun.MailgunImpl
-	if config.Setup {
-		mg = mailgun.NewMailgun(config.Domain, config.PrivateKey)
+	if config.Mail.Setup {
+		mg = mailgun.NewMailgun(config.Mail.Domain, config.Mail.PrivateKey)
 	}
 
 	// Open Database connection.
@@ -40,18 +40,18 @@ func removeMissing() (err error) {
 			return err
 		}
 
-		if node.Email != "" && config.Setup {
-			content, err := ioutil.ReadFile("templates/email/email_message.txt")
+		if node.Email != "" && config.Mail.Setup {
+			content, err := ioutil.ReadFile("templates/email/alert_message.txt")
 			if err != nil {
 				log.Fatal(err)
 			}
 			emailMessage := string(content)
 
 			message := mg.NewMessage(
-				config.Sender,
+				config.Mail.Sender,
 				"Arken Node Offline",
 				emailMessage,
-				cleanEmail(node.Email))
+				config.CleanEmail(node.Email))
 
 			ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 			defer cancel()
@@ -70,8 +70,4 @@ func removeMissing() (err error) {
 	}
 
 	return nil
-}
-
-func cleanEmail(email string) string {
-	return strings.TrimSuffix(strings.TrimPrefix(email, `"`), `"`)
 }

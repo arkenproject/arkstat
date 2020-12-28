@@ -91,10 +91,6 @@
   </script>
 
   </div></div></header>
-
-  <div class="content">
-    <div class="wrapper">
-
       <section class="light">
         <div class="section-wrapper">
           <div class="columns">
@@ -118,6 +114,13 @@
         </div>
       </section>
 
+      <!-- <section class="default">
+        <div class="columns">
+          <div><a href="https://asciinema.org/a/344705" target="_blank"><img src="/images/demo.svg" /></a></div>
+          <div><a href="https://asciinema.org/a/344705" target="_blank"><img src="/images/demo.svg" /></a></div>
+        </div>
+      </section> -->
+
       <section id="about" class="default">
         <div class="section-wrapper">
           <div class="columns">
@@ -132,22 +135,25 @@
               <p>Arken is a management engine that runs on top of the IPFS (Interplanetary File System) protocol. Each instance of Arken 
                 calculates which important files are hosted by the fewest number of other nodes on the network and should thus be 
                 locally backed up to reduce the risk of data loss. Arken also knows how much space it's using on your system and will 
-                respect limits you set by locally deleting data that is backed up by more than 10% of the cluster.</p>
+                respect limits you set by locally deleting data that is backed up more than 5 times across the cluster.</p>
             </div>
 
             <div>
-              <h2>Demo of Arken Running</h2>
-              <a href="https://asciinema.org/a/344705" target="_blank"><img src="/images/demo.svg" /></a>
+              <h2>Interested in Uploading Data?</h2>
+              <p>If you are a researcher, collections curator, or open source publisher check out the our guide on using the Arken Import Tool
+                to upload your data to the cluster  <a href='/docs/upload'>here</a>.</p>
               <br>
               <br>
-              <h2>Want to read more about Arken?</h2>
-              <p>Check out the <a href="https://github.com/arkenproject/arken">Project's Github Page</a>.</p>
+              <h2>Want to explore the data already stored in Arken?</h2>
+              <p>
+                Checkout the  <a href='github.com/arkenproject/core-keyset'><b>Core Keyset</b></a>, open up a keyset file to explore the File IDs contained within.
+                To view the file in your browser or download it you can then paste the link into the Arken Link Bridge like so.</p>
+                <pre class="highlight"><code>https://link.arken.io/ipfs/REPLACE-ME-WITH-FILE-ID</code></pre>
+              </p>              
             </div>
           </div>
         </div>
       </section>
-    </div> 
-  </div>
 
   <script src='/js/nav.js'></script>
   <script>
