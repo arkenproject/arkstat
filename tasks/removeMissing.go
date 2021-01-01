@@ -69,5 +69,5 @@ func removeMissing() (err error) {
 		return err
 	}
 
-	return nil
+	return db.Close()
 }

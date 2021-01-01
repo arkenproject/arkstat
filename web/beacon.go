@@ -71,6 +71,10 @@ func Beacon(w http.ResponseWriter, r *http.Request) {
 				log.Println(err)
 			}
 		}
+		err = db.Close()
+		if err != nil {
+			log.Println(err)
+		}
 	} else {
 		http.Redirect(w, r, "/", 302)
 	}
