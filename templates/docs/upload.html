@@ -91,30 +91,59 @@
             </div>
             <div id="questions">
               <h2 id="intro">Introduction</h2>
+              <div class="question">
+                <h3>What is the Core Arken Cluster?</h3>
+                <span><p>
+                  The Core Arken Cluster is the official data repository maintained by the Arken Project,
+                  dedicated to preserving open source and scientific data. Besides being an Archival System,
+                   Arken is also a community of researchers, organizations, and individuals contributing storage
+                    space to the core cluster. As a member of the Core Cluster organizations agree to host
+                    a subset of eachothers data. By creating a geographically distributed backup, your data
+                    will never be lost in the case that any single node fails or looses connection. 
+                </p></span>
+              </div>
       
               <div class="question">
-                <h3>Getting Started: How can I upload data to Arken?
+                <h3>Getting Started: How can I upload data to the Core Arken Cluster?
                 <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
                 <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
                 <span><p>
-                  The first step when uploading data to Arken is to chose which Keyset your data fits into.
-                  A Keyset is an file manifest that tells the cluster what files it should keep track of and 
-                  backup. These manifests are at their most basic, a shared directory of files that contain metadata 
-                  (but not the actual data) of your files letting the nodes of their existence and how to find them. 
-                  (Hence we call these manifests Keysets because they are a set of file keys.)  
+                  If you're familiar with how GitHub works, submissions to the Core Arken Cluster are done through Pull Requests.
+                  If you're not familiar with GitHub no worries, we'll walk you through it. 
+                  To prevent anyone/everyone from being able to upload to the Core Arken Cluster 
+                  we handle uploads through application submissions to the <a href='https://github.com/arkenproject/core-keyset'><b>Core-Keyset</b></a> repository.
+
                   <br>
                   <br>
-                  If you're a researcher with an important data set, author who wants to open source their book, or 
-                  curator of an important collection, you're likely looking for the Core Keyset. The Core Keyset is the 
-                  central manifest that we maintain at the Arken Project and is intended to help preserve valuable scientific 
-                  and open source data otherwise at risk of being lost.
+
+                  
+                  <b>To write an application you'll need:</b>
+                  <br> 
+                  1. All of your data available on your local computer (or connected through an external hard drive).
+                  <br>
+                  2. A GitHub Account (<a href='https://github.com/join'><b>Click here</b></a> to sign up for an account.)
+                  <br>
+                  3. And the Arken Import Tool. (<a href='#ait'><b>Click here</b></a> to follow a tutorial
+                  to install the Arken Import Tool on your machine.)
                   <br>
                   <br>
+                  If you've got any questions, reach out to us at <a href = "mailto: team@arken.io">team@arken.io</a>.
+                </p></span>
+              </div>
+              <div class="question">
+                <h3>Getting Started: How can I upload data to my own Arken Cluster?
+                <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+                <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+                <span><p>
                   Keysets don't just have to be for serious stuff however, anyone can create their own Keyset and use it to backup 
                   and share family photos, song recordings, etc... between your own Arken nodes.
                   <br>
                   <br>
-                  If you've got any questions, reach out to us at <a href = "mailto: team@arken.io">team@arken.io</a>.
+                  The process for uploading data to your own Arken Cluster is nearly the same as uploading data to the Core Arken Cluster.
+                  However, you will need to create your own publicly accessible Git repository and use the link to that repository 
+                  instead of the link to the Core Arken Keyset. (When creating your Git Repository make sure to create your own keyset.config
+                  file.) To add your keyset to your Arken node edit the called .arken/sources by removing the Core Keyset and adding the link
+                  to your own Keyset.
                 </p></span>
               </div>
               <h2 id="ait">The Arken Import Tool</h2>
@@ -123,11 +152,78 @@
                 <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
                 <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
                 <span><p>
-                  Whether you're uploading data to the Core Keyset or to your own Keyset, you'll need a tool to do that. 
-                  That tool is called AIT (or the Arken Import Tool). AIT is a command line tool and if you've ever heard 
-                  of <a href= "https://git-scm.com/"> GIT</a> it's got a very similar syntax. You can download AIT 
-                  <a href="https://github.com/arkenproject/ait/releases">HERE</a> for Linux and Mac, and the Windows version is coming soon.
-                </p></span>
+                  Whether you're uploading data to the Core Arken Cluster or to your own Cluster, you'll need to use AIT (or the Arken Import Tool) to
+                  generate your file manifest and submit it to the Keyset. You can think of a Keyset in Arken is file manifest for the whole cluster. 
+                  A Keyset tells the Arken nodes which files to backup and keep track of so that as nodes join and leave the cluster, the files are
+                  always backed up on multiple machines. If you've heard of <a href= "https://git-scm.com/"> GIT</a> before, it's got a very similar
+                  syntax to AIT. AIT is a command line application which means that it doesn't have a graphical interface. I know that sounds
+                  scary but we'll walk you through setting it up and using it to upload your data.
+                  <br>
+                  <br>
+                  First let's download AIT to your computer. Go to the AIT GitHub Page linked below, at the top of the screen will be the
+                  latest release of AIT. Under the "Assets" section will be a number of differently named versions of AIT. Each name
+                  corresponds to the operating system and type of computer it's made to run on. For example, "darwin-amd64" is meant to
+                  be run on a Intel based Mac (any mac made before the fall of 2020. Here "darwin" means MacOS.) Right click on the package
+                  that matches your operating system and computer type and copy the link to it.
+                  <br>
+                  <br>
+                  (Note: Windows packages are coming! But for now, please use the 
+                  <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"><b>Windows Subsystem for Linux</b></a> to run AIT. After installing
+                  WSL please follow the Linux instructions for installing AIT.)
+                  <br>
+                  <br>
+                  <a href= "https://github.com/arkenproject/ait/releases/"><b>AIT Releases</b></a>
+                  <br>
+                  <br>
+                  Now open the terminal on your computer.
+                  <br>
+                  If your on Linux we'll assume you know how to get to your terminal. If you're on a Mac press the cmd + space bar keys
+                  on your keyboard to open spotlight search. Now type "terminal" and hit return.
+                </p>
+                  <br>
+                  <br>
+                  <p>(If you're on a Mac) Create your /usr/local/bin directory by running</p>
+                  <pre class="highlight"><code>$ sudo mkdir /usr/local/bin </code></pre>
+                  <br>
+                  <br>
+                  <br>
+                <p>
+                  Now dowload the AIT application to your local bin by running the following command replacing the "PATH-TO-THE-APPLICATION"
+                  with the link that we coppied from the AIT GitHub page earlier.
+                </p>
+                  <pre class="highlight"><code>$ sudo curl -L "PATH-TO-THE-APPLICATION-FOR-YOUR-COMPUTER" -o /usr/local/bin/ait</code></pre>
+                  <br>
+                  <br>
+                  <br>
+                  <p>
+                    Now we must allow AIT to be executed as an application.
+                  </p>
+                  <pre class="highlight"><code>$ sudo chmod a+x /usr/local/bin/ait/ <code></pre>
+                  <br>
+                  <br>
+                  <p>
+                    (On Linux) Run
+                  </p>
+                  <pre class="highlight"><code>$ sudo ln -s /usr/local/bin/ait /usr/bin/ait <code></pre>
+                  <br>
+                  <br>
+                  <p>
+                    (On MacOS) Run
+                  </p>
+                  <pre class="highlight"><code>$ echo "export PATH=/usr/local/bin:$PATH" >> ~/.profile <code></pre>
+                  <br>
+                  <br>
+                  <p>
+                    You may have to log out and back in, but after that you should be able to see the AIT menu by running:
+                  </p>
+                  <pre class="highlight"><code>$ ait <code></pre>
+                  <br>
+                  <br>
+                  <p>
+                    If you're uploading to the Core Arken Cluster <a href= "https://github.com/arkenproject/ait#tutorial"><b>click here</b></a> to 
+                    checkout the AIT tutorial on uploading your data to the Core Arken Cluster.
+                  </p>
+                </span>
               </div>
               <div class="question">
                 <h3>Demo:
