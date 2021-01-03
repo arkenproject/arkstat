@@ -92,7 +92,9 @@
             <div id="questions">
               <h2 id="intro">Introduction</h2>
               <div class="question">
-                <h3>What is the Core Arken Cluster?</h3>
+                <h3>What is the Core Arken Cluster?
+                  <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+                  <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
                 <span><p>
                   The Core Arken Cluster is the official data repository maintained by the Arken Project,
                   dedicated to preserving open source and scientific data. Besides being an Archival System,
@@ -151,75 +153,64 @@
                 <h3>Installing & Using the Arken Import Tool:
                 <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
                 <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
-                <span><p>
-                  Whether you're uploading data to the Core Arken Cluster or to your own Cluster, you'll need to use AIT (or the Arken Import Tool) to
-                  generate your file manifest and submit it to the Keyset. You can think of a Keyset in Arken is file manifest for the whole cluster. 
-                  A Keyset tells the Arken nodes which files to backup and keep track of so that as nodes join and leave the cluster, the files are
-                  always backed up on multiple machines. If you've heard of <a href= "https://git-scm.com/"> GIT</a> before, it's got a very similar
-                  syntax to AIT. AIT is a command line application which means that it doesn't have a graphical interface. I know that sounds
-                  scary but we'll walk you through setting it up and using it to upload your data.
-                  <br>
-                  <br>
-                  First let's download AIT to your computer. Go to the AIT GitHub Page linked below, at the top of the screen will be the
-                  latest release of AIT. Under the "Assets" section will be a number of differently named versions of AIT. Each name
-                  corresponds to the operating system and type of computer it's made to run on. For example, "darwin-amd64" is meant to
-                  be run on a Intel based Mac (any mac made before the fall of 2020. Here "darwin" means MacOS.) Right click on the package
-                  that matches your operating system and computer type and copy the link to it.
-                  <br>
-                  <br>
-                  (Note: Windows packages are coming! But for now, please use the 
-                  <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"><b>Windows Subsystem for Linux</b></a> to run AIT. After installing
-                  WSL please follow the Linux instructions for installing AIT.)
-                  <br>
-                  <br>
-                  <a href= "https://github.com/arkenproject/ait/releases/"><b>AIT Releases</b></a>
-                  <br>
-                  <br>
-                  Now open the terminal on your computer.
-                  <br>
-                  If your on Linux we'll assume you know how to get to your terminal. If you're on a Mac press the cmd + space bar keys
-                  on your keyboard to open spotlight search. Now type "terminal" and hit return.
-                </p>
-                  <br>
-                  <br>
-                  <p>(If you're on a Mac) Create your /usr/local/bin directory by running</p>
-                  <pre class="highlight"><code>$ sudo mkdir /usr/local/bin </code></pre>
-                  <br>
-                  <br>
-                  <br>
-                <p>
-                  Now dowload the AIT application to your local bin by running the following command replacing the "PATH-TO-THE-APPLICATION"
-                  with the link that we coppied from the AIT GitHub page earlier.
-                </p>
-                  <pre class="highlight"><code>$ sudo curl -L "PATH-TO-THE-APPLICATION-FOR-YOUR-COMPUTER" -o /usr/local/bin/ait</code></pre>
-                  <br>
-                  <br>
-                  <br>
+                <span>
                   <p>
+                    Whether you're uploading data to the Core Arken Cluster or to your own Cluster, you'll need to use AIT (or the Arken Import Tool) to
+                    generate your file manifest and submit it to the Keyset. You can think of a Keyset in Arken is file manifest for the whole cluster. 
+                    A Keyset tells the Arken nodes which files to backup and keep track of so that as nodes join and leave the cluster, the files are
+                    always backed up on multiple machines. If you've heard of <a href= "https://git-scm.com/"> GIT</a> before, it's got a very similar
+                    syntax to AIT. AIT is a command line application which means that it doesn't have a graphical interface. I know that sounds
+                    scary but we'll walk you through setting it up and using it to upload your data.
+                    <br>
+                    <br>
+                    First let's download AIT to your computer. Go to the AIT GitHub Page linked below, at the top of the screen will be the
+                    latest release of AIT. Under the "Assets" section will be a number of differently named versions of AIT. Each name
+                    corresponds to the operating system and type of computer it's made to run on. For example, "darwin-amd64" is meant to
+                    be run on a Intel based Mac (any mac made before the fall of 2020. Here "darwin" means MacOS.) Right click on the package
+                    that matches your operating system and computer type and copy the link to it.
+                    <br>
+                    <br>
+                    (Note: Windows packages are coming! But for now, please use the 
+                    <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"><b>Windows Subsystem for Linux</b></a> to run AIT. After installing
+                    WSL please follow the Linux instructions for installing AIT.)
+                    <br>
+                    <br>
+                    <a href= "https://github.com/arkenproject/ait/releases/"><b>AIT Releases</b></a>
+                    <br>
+                    <br>
+                    Now open the terminal on your computer.
+                    <br>
+                    If your on Linux we'll assume you know how to get to your terminal. If you're on a Mac press the cmd + space bar keys
+                    on your keyboard to open spotlight search. Now type "terminal" and hit return.
+                    <br>
+                    <br>
+                    (If you're on a Mac) Create your /usr/local/bin directory by running
+                    <pre class="highlight"><code>$ sudo mkdir /usr/local/bin </code></pre>
+                    <br>
+                    <br>
+                    <br>
+                    Now dowload the AIT application to your local bin by running the following command replacing the "PATH-TO-THE-APPLICATION"
+                    with the link that we coppied from the AIT GitHub page earlier.
+                    <pre class="highlight"><code>$ sudo curl -L "PATH-TO-THE-APPLICATION-FOR-YOUR-COMPUTER" -o /usr/local/bin/ait</code></pre>
+                    <br>
+                    <br>
+                    <br>
                     Now we must allow AIT to be executed as an application.
-                  </p>
-                  <pre class="highlight"><code>$ sudo chmod a+x /usr/local/bin/ait/ <code></pre>
+                  <pre class="highlight"><code>$ sudo chmod a+x /usr/local/bin/ait/ </code></pre>
                   <br>
                   <br>
-                  <p>
                     (On Linux) Run
-                  </p>
-                  <pre class="highlight"><code>$ sudo ln -s /usr/local/bin/ait /usr/bin/ait <code></pre>
+                  <pre class="highlight"><code>$ sudo ln -s /usr/local/bin/ait /usr/bin/ait </code></pre>
                   <br>
                   <br>
-                  <p>
                     (On MacOS) Run
-                  </p>
-                  <pre class="highlight"><code>$ echo "export PATH=/usr/local/bin:$PATH" >> ~/.profile <code></pre>
+                  <pre class="highlight"><code>$ echo "export PATH=/usr/local/bin:$PATH" >> ~/.profile </code></pre>
                   <br>
                   <br>
-                  <p>
                     You may have to log out and back in, but after that you should be able to see the AIT menu by running:
-                  </p>
-                  <pre class="highlight"><code>$ ait <code></pre>
+                  <pre class="highlight"><code>$ ait </code></pre>
                   <br>
                   <br>
-                  <p>
                     If you're uploading to the Core Arken Cluster <a href= "https://github.com/arkenproject/ait#tutorial"><b>click here</b></a> to 
                     checkout the AIT tutorial on uploading your data to the Core Arken Cluster.
                   </p>
@@ -236,7 +227,6 @@
               </div>
             </div>
           </div></section>
-      
     </div> 
   </div>
 
