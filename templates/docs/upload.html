@@ -36,11 +36,17 @@
   <!--<link rel="stylesheet" type="text/css" href="/css/footer.css"/>-->
 
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/highlight/styles/atom-one-light.css">
+  <script src="/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
   <style type="text/css">
     .no-fouc {
       display: none;
     }
+    pre, code {
+    white-space: pre-wrap;
+}
   </style>
   <script src="/graphic/public/build/bundle.js"></script>
   <script type="text/javascript">
@@ -206,12 +212,10 @@
                     <p>
                         (On MacOS) Run  
                     </p>
-                    <pre class="highlight"><code>$ echo export PATH=/usr/local/bin:$PATH >> ~/.profile </code></pre>
+                    <pre class="highlight"><code>$ echo "export PATH=/usr/local/bin:$PATH" >> ~/.profile </code></pre>
                   <br>
                   <br>
-                    <p>
-                        You may have to log out and back in, but after that you should be able to see the AIT menu by running:
-                    </p>
+                    You may have to log out and back in, but after that you should be able to see the AIT menu by running:
                   <pre class="highlight"><code>$ ait </code></pre>
                   <br>
                   <br>
