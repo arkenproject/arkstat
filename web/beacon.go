@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/arkenproject/arkstat/config"
-	"github.com/arkenproject/arkstat/database"
+	"github.com/arken/arkstat/config"
+	"github.com/arken/arkstat/database"
 	"github.com/mailgun/mailgun-go/v4"
 )
 

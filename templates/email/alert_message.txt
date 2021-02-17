@@ -10,7 +10,7 @@ If you're able to log in to your node you may be able to see what's going wrong.
 docker-compose logs -f --tail=50 arken
 
 If Arken is encountering an error please open a Github issue to tell us about it at
-https://github.com/arkenproject/arken/issues
+https://github.com/arken/arken/issues
 
 
 Thank you for contributing to the Arken Cluster and helping to preserve valuable scientific knowledge! ❤️

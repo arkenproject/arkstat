@@ -42,8 +42,8 @@
       display: none;
     }
   </style>
-  <script src="graphic/public/build/bundle.js"></script>
-  <script type="text/javascript">
+  <script defer src="graphic/public/build/bundle.js"></script>
+  <script defer type="text/javascript">
     document.documentElement.className = 'no-fouc';
   </script>
 
@@ -75,7 +75,7 @@
       </div>
   </nav>
   <script>
-    // set the values here and use them in the 
+    // set the values here and use them in the graphic.
     window.onload = () => {
       let used = {{.UsedSpace}}
       let total = {{.TotalSpace}}
@@ -107,9 +107,9 @@
                 <li><b>Total Space:</b> {{.TotalSpace}} TB</li>
                 <li><b>Active Nodes:</b> {{.ActiveNodes}}</li>
                 <hr />
-                <li><b>Gitub:</b> <a href="https://github.com/arkenproject/arken">arkenproject/arken</a></li>
+                <li><b>Gitub:</b> <a href="https://github.com/arken/arken">arken/arken</a></li>
                 <hr />
-                <li><b>Dockerhub:</b> <a href='https://hub.docker.com/r/arkenproject/arken'>arkenproject/arken</a></li>
+                <li><b>Dockerhub:</b> <a href='https://hub.docker.com/r/arken/arken'>arken/arken</a></li>
               </ul>
             </div>
           </div>
@@ -169,8 +169,8 @@
                 If you are an individual or organization without the ability to host your own system, you may apply for an allocation to the Core
                 Arken Cluster by submitting your files as an application. The Arken Project typically gives allocations to researchers in need
                 who's data is at risk of being lost and who's data will benefit the public by being openly accessible. If you believe your data falls
-                into this category please submit your application to the <a href='https://github.com/arkenproject/core-keyset'><b>core-keyset</b></a> using 
-                the <a href='https://github.com/arkenproject/ait'><b>Arken import tool</b></a>.
+                into this category please submit your application to the <a href='https://github.com/arken/core-keyset'><b>core-keyset</b></a> using 
+                the <a href='https://github.com/arken/ait'><b>Arken import tool</b></a>.
               </p>
 
               <h3>A Technical Version</h3>
@@ -186,7 +186,7 @@
               <br>
               <h2>Want to explore the data already stored in the Core Arken Cluster?</h2>
               <p>
-                Checkout the  <a href='https://github.com/arkenproject/core-keyset'><b>Core Keyset</b></a>, open up a keyset file to explore the File IDs contained within.
+                Checkout the  <a href='https://github.com/arken/core-keyset'><b>Core Keyset</b></a>, open up a keyset file to explore the File IDs contained within.
                 To view the file in your browser or download it you can then paste the link to the Arken to Web Link like so.</p>
                 <pre class="highlight"><code>https://link.arken.io/ipfs/REPLACE-ME-WITH-FILE-ID</code></pre>
               </p>        
@@ -196,7 +196,7 @@
       </section>
     </div>
 
-  <script src='/js/nav.js'></script>
+  <script defer src='/js/nav.js'></script>
   <script>
     window.addEventListener("load", function (e) {
       document.documentElement.className = '';

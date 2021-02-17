@@ -20,5 +20,5 @@ jobs:
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag arkenproject/arkstat:latest \
+            --tag arken/arkstat:latest \
             --platform linux/amd64 .

@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/arkenproject/arkstat/tasks"
-	"github.com/arkenproject/arkstat/web"
+	"github.com/arken/arkstat/tasks"
+	"github.com/arken/arkstat/web"
 )
 
 // HTMLDir wraps a http.Dir stuct to add custom opening formats.

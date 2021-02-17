@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/arkenproject/arkstat/database"
-	"github.com/arkenproject/arkstat/web"
+	"github.com/arken/arkstat/database"
+	"github.com/arken/arkstat/web"
 )
 
 func updateSite() (err error) {

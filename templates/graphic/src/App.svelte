@@ -1,6 +1,5 @@
 <script>
   import * as d3 from "d3";
-  import legend from "d3-svg-legend";
   import { onMount } from "svelte";
   export let used,total
   let svgElement;
